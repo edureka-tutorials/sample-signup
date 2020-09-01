@@ -26,7 +26,7 @@ logger.info("SUCCESS: Connection to RDS MySQL instance succeeded")
 def write_to_db(firstname,lastname):
     with conn.cursor() as cur:
         cur.execute("create table IF NOT EXISTS applicationdata (ID int AUTO_INCREMENT NOT NULL, firstname varchar(255), lastname varchar(255), PRIMARY KEY (ID));")
-        cur.execute('insert into applicationdata (vehicle_id,fuel_level) values(%s,%s)',(firstname,lastname))
+        cur.execute('insert into applicationdata (firstname,lastname) values(%s,%s)',(firstname,lastname))
         conn.commit()
     conn.commit()
 

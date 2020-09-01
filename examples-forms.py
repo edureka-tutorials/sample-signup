@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_wtf import Form
 from wtforms import TextField
-import boto3
+#import boto3
 import dbwrite
 
 app = Flask(__name__)
